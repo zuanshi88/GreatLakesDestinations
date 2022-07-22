@@ -33,7 +33,8 @@
 function addMarker(props){
   var marker = new google.maps.Marker({
     position:props.coords,
-    map: map
+    map: map,
+    clicked: false
     // iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
   });
 
@@ -46,14 +47,34 @@ function addMarker(props){
   };
 
   if(props.content){
-    var infoWindow = new google.maps.InfoWindow({
+    marker.infoWindow = new google.maps.InfoWindow({
       content: props.content
     });
 
-    marker.addListener('click', function(){
-      infoWindow.open(map, marker);
+
+    marker.addListener('mouseover', function(){
+      marker.infoWindow.open(map, marker)
     });
+
+    marker.addListener('mouseout', function(){
+      if(marker.clicked == false){
+      marker.infoWindow.close()
+    }
+    });
+
+    marker.addListener('click', function(){
+      if(marker.clicked == false){
+      marker.infoWindow.open(map, marker)
+      marker.clicked = true;
+    } else {
+      marker.infoWindow.close();
+        marker.clicked = false;
+    }
+    });
+
   }
+
+
 
 
 
@@ -62,71 +83,73 @@ function addMarker(props){
 const restaurant = "https://developers.google.com/maps/documentation/javascript/examples/full/images/restaurant.png"
 
 // Sleeping Bear Dunes
-addMarker({coords:{lat: 44.8837, lng: -86.0442}})
+addMarker({coords:{lat: 44.8837, lng: -86.0442}, content: "<h1>SLEEPING BEAR DUNES</h1><p>this whole area has so much wonderful lake front and dune hiking.</p>"})
 // Traverse City
-addMarker({coords:{lat: 44.7631, lng: -85.6206}})
+addMarker({coords:{lat: 44.7631, lng: -85.6206}, content: "<h1>TRAVERSE CITY</h1><p>vibrant summer destination</p>"})
 // Holland, 42.835584200795516, -86.11250208226757
-addMarker({coords:{lat: 42.835584200795516, lng: -86.11250208226757}})
+addMarker({coords:{lat: 42.835584200795516, lng: -86.11250208226757}, content: "<h1>HOLLAND</h1><p></p>"})
 //south haven, 42.40316752119046, -86.27297163030516
-addMarker({coords:{lat: 42.40316752119046, lng: -86.27297163030516}})
+addMarker({coords:{lat: 42.40316752119046, lng: -86.27297163030516}, content: "<h1>SOUTH HAVEN</h1><p></p>"})
 //grand haven, 43.06332139458724, -86.22716015025239
-addMarker({coords:{lat: 43.06332139458724, lng: -86.22716015025239}})
+addMarker({coords:{lat: 43.06332139458724, lng: -86.22716015025239}, content: "<h1>GRAND HAVEN</h1><p></p>"})
 //New buffalo, 41.808099183933116, -86.74502371207247
-addMarker({coords:{lat: 41.808099183933116, lng: -86.74502371207247}})
+addMarker({coords:{lat: 41.808099183933116, lng: -86.74502371207247}, content: "<h1>NEW BUFFALO</h1><p></p>"})
 //st. joes, 42.09666067392483, -86.4859678905205
-addMarker({coords:{lat: 42.09666067392483, lng: -86.4859678905205}})
+addMarker({coords:{lat: 42.09666067392483, lng: -86.4859678905205}, content: "<h1>ST. JOESPH</h1><p></p>"})
 //ludington, 43.95534169559414, -86.44889229216255
-addMarker({coords:{lat: 43.95534169559414, lng: -86.44889229216255}})
+addMarker({coords:{lat: 43.95534169559414, lng: -86.44889229216255}, content: "<h1>LUDINGTON</h1><p></p>"})
 //muskegon,  43.31463157813105, -86.25103688354207
-addMarker({coords:{lat: 43.31463157813105, lng: -86.25103688354207}})
+addMarker({coords:{lat: 43.31463157813105, lng: -86.25103688354207}, content: "<h1>MUSKEGON</h1><p></p>"})
 // indian dunes national Park 41.65026686232037, -87.0993327649549
-addMarker({coords:{lat: 41.65026686232037, lng: -87.0993327649549}})
+addMarker({coords:{lat: 41.65026686232037, lng: -87.0993327649549}, content: "<h1>INDIANA DUNES</h1><p></p>"})
 // Grand rapids Children's museum
-addMarker({coords:{lat: 42.963600, lng: -85.667191}})
+addMarker({coords:{lat: 42.963600, lng: -85.667191}, content: "<h1>GR CHILDREN'S MUSEUM</h1><p></p>"})
 // Meijer Garden  42.9795, 85.5901
-addMarker({coords:{lat: 42.9795, lng: -85.5901}})
+addMarker({coords:{lat: 42.9795, lng: -85.5901}, content: "<h1>MEIJER GARDENS</h1><p></p>"})
 // Fayette 45.71891513583621, -86.66774222329686
-addMarker({coords:{lat: 45.71891513583621, lng: -86.66774222329686}})
+addMarker({coords:{lat: 45.71891513583621, lng: -86.66774222329686}, content: "<h1>FAYETTE STATE PARK</h1><p>a ghost town preserved as a State Park. It was an industrial community that made pig iron in the late 1800s. It has a lot of preserved buildings that you can walk around in as well as some interesting industrial architectural relics. Sometimes they have historical reenactments and such.</p>"})
 //Kitch-iti-kipp
-addMarker({coords:{lat: 46.0042, lng: -86.3820}})
+addMarker({coords:{lat: 46.0042, lng: -86.3820}, content: "<h1>KITCH-ITI-KIPPI</h1><p>natural spring right off of US 2 that has a platform/raft with an open bottom so you can float out on the spring lake/pond and see fish and whatnot in the very clear emerald-hued waters</p>"})
 //Marquette
-addMarker({coords:{lat: 46.5436, lng: -87.3954}})
+addMarker({coords:{lat: 46.5436, lng: -87.3954}, content: "<h1>MARQUETTE</h1><p>tons of hiking around here (Noquemanon Trail Network). Definitely the best town in the UP in my humble opinion. We always enjoy Sugar Loaf as well as Presque Isle.  Downtown Marquette is apparently in the top 30 quaintest downtowns in America… top 30, not too shabby.</p>"})
 // Presque isle
-addMarker({coords:{lat: 46.5880, lng: -87.3818}})
+addMarker({coords:{lat: 46.5880, lng: -87.3818}, content: "<h1>PRESQUE ISLE</h1><p></p>"})
 // sugarloaf
-addMarker({coords:{lat: 46.5891, lng: -87.4451}})
+addMarker({coords:{lat: 46.5891, lng: -87.4451}, content: "<h1>SUGAR LOAF</h1><p></p>"})
 // Pictured Rocks 46.5707, 86.3251
-addMarker({coords:{lat: 46.5707, lng: -86.3251}})
+addMarker({coords:{lat: 46.5707, lng: -86.3251}, content: "<h1>PICTURED ROCKS</h1><p>lots of hiking around here as well as some boat tours of the gorgeous and iconic Pictured Rocks. </p>"})
 // Devil's log slide 46.65435105883329, -86.11127976136282
-addMarker({coords:{lat: 46.65435105883329, lng: -86.11127976136282}})
+addMarker({coords:{lat: 46.65435105883329, lng: -86.11127976136282}, content: "<h1>DEVIL'S LOG SLIDE</h1><p>Climbing down and then up Devils Log Slide is a a great way to tire the kids out and catch some great views!</p>"})
 //Muskellonge state park 46.6768460315615, -85.6280844318353
-addMarker({coords:{lat: 46.6768460315615, lng: -85.6280844318353}})
+addMarker({coords:{lat: 46.6768460315615, lng: -85.6280844318353}, content: "<h1>MUSKELLONGE STATE PARK</h1><p></p>"})
 // Fort Michilimackinac 45.7878, 84.7319
-addMarker({coords:{lat: 45.7878, lng: -84.7319}})
+addMarker({coords:{lat: 45.7878, lng: -84.7319}, content: "<h1>FORT MICHILIMACKINAC</h1><p>the Colonial fort in Mackinaw City is great, always enjoyed visiting there as a kid</p>"})
+// Mackinaw Island 45.869051948617084, -84.62741703408847
+addMarker({coords:{lat: 45.869051948617084, lng: -84.62741703408847}, content: "<h1>Mackinac Island</h1><p>A ferry ride, a fort, no cars and delicious fudge-- what more do you need?</p>"})
 // Clyde's 45.85786249557904, -84.73464578465929
-addMarker({coords:{lat: 45.85786249557904, lng: -84.73464578465929}})
+addMarker({coords:{lat: 45.85786249557904, lng: -84.73464578465929}, content: "<h1>CLYDE'S</h1><p>Located in St. Ignace, the town on the North side of the Mackinaw Bridge featuring burgers and shakes and ‘quality since 1949’!</p>"})
 // taquamenon falls  46.576606301536934, -85.25741751277552
-addMarker({coords:{lat: 46.576606301536934, lng: -85.25741751277552}})
+addMarker({coords:{lat: 46.576606301536934, lng: -85.25741751277552}, content: "<h1>TAQUAMENON FALLS</h1><p>definitely a natural highlight of the UP. It’s not Yellow Stone, but it’s very pretty and has lots of kid friendly hiking and water play (the Lower Falls are fun to climb around on and swim a bit)</p>"})
 //oswald's bear ranch 46.43053177280181, -85.59186423184686
-addMarker({coords:{lat: 46.43053177280181, lng: -85.59186423184686}})
+addMarker({coords:{lat: 46.43053177280181, lng: -85.59186423184686}, content: "<h1>OSWALD'S BEAR RANCH</h1><p>if you guys want to see some Bears, this place has like 40 of them!</p>"})
 //Sault Locks 46.502218073091974, -84.35030005443528
-addMarker({coords:{lat: 46.502218073091974, lng: -84.35030005443528}})
+addMarker({coords:{lat: 46.502218073091974, lng: -84.35030005443528}, content: "<h1>SOO LOCKS</h1><p>right on the border with Canada and a great place to see huge ships super close as they pass through the locks(there’s even a spectator grand stand.)</p>"})
 // Rapid River Park 46.061817022456616, -86.989632040202
-addMarker({coords:{lat: 46.061817022456616, lng: -86.989632040202}})
+addMarker({coords:{lat: 46.061817022456616, lng: -86.989632040202}, content: "<h1>RAPID RIVER PARK</h1><p>A humble county park, with a sweet shallow river, with a small waterfall, great for splashing around and trying to catch crayfish</p>"})
 // Gladstone Mich 45.873635652560225, -87.02807102230716
-addMarker({coords:{lat: 45.873635652560225, lng: -87.02807102230716}})
+addMarker({coords:{lat: 45.873635652560225, lng: -87.02807102230716}, content: "<h1>GLADSTONE</h1><p></p>"})
 // Island Resort and Casino -- Splash Island --45.70292652676633, -87.33967928465928
-addMarker({coords:{lat: 45.70292652676633, lng: -87.33967928465928}})
+addMarker({coords:{lat: 45.70292652676633, lng: -87.33967928465928}, content: "<h1>ISLAND RESORT and CASINO</h1><p>a hotel and casino with a small indoor water park</p>"})
 // the DeYoung Family Zoo zoo 45.307745636406956, -87.64342793189883
-addMarker({coords:{lat: 45.307745636406956, lng: -87.64342793189883}})
+addMarker({coords:{lat: 45.307745636406956, lng: -87.64342793189883}, content: "<h1>DeYOUNG FAMILY ZOO</h1><p>Privately run zoo with over 400 animals (domestic and exotic)</p>"})
 // Colonol K pasties 45.110462688311834, -87.6147744020783
-addMarker({coords:{lat: 45.110462688311834, lng: -87.6147744020783}})
+addMarker({coords:{lat: 45.110462688311834, lng: -87.6147744020783}, content: "<h1>COLONEL K's Pasty Shop</h1><p>betsy and I have tried a number of differnt pasties-- these are our favorites</p>"})
 // bay beach   44.53145561298, -87.979914801525
-addMarker({coords:{lat: 44.53145561298, lng: -87.979914801525}})
+addMarker({coords:{lat: 44.53145561298, lng: -87.979914801525}, content: "<h1>BAY BEACH</h1><p>Old school permenant amusement park and a wildlife</p>"})
 // Port Washington Possibility playgroun 43.39684866905222, -87.86544622558881
-addMarker({coords:{lat: 43.39684866905222, lng: -87.86544622558881}})
+addMarker({coords:{lat: 43.39684866905222, lng: -87.86544622558881}, content: "<h1>POSSIBILITY PLAYGROUND</h1><p>very quaint lake town just north of Milwaukee with a great playground in this park up on a bluff right near the lake shore.</p>"})
 // Port washington ice cream  43.39123283029162, -87.86973777299856
-addMarker({coords:{lat:  43.39123283029162, lng: -87.86973777299856}})
+addMarker({coords:{lat:  43.39123283029162, lng: -87.86973777299856}, content: "<h1>FRANKIE'S ICE CREAM</h1><p>donuts and ice cream from an Airstream trailer</p>"})
 
 
   /*

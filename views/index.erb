@@ -31,12 +31,35 @@
   // sleeping bear dunes
 
 function addMarker(props){
-  new google.maps.Marker({
+  var marker = new google.maps.Marker({
     position:props.coords,
-    map: map,
-    icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+    map: map
+    // iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
   });
+
+//check for custom icon
+
+  if(props.iconImage){
+    marker.setIcon(props.iconImage)
+  } else {
+    marker.setIcon("https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png")
+  };
+
+  if(props.content){
+    var infoWindow = new google.maps.InfoWindow({
+      content: props.content
+    });
+
+    marker.addListener('click', function(){
+      infoWindow.open(map, marker);
+    });
+  }
+
+
+
 }
+
+const restaurant = "https://developers.google.com/maps/documentation/javascript/examples/full/images/restaurant.png"
 
 // Sleeping Bear Dunes
 addMarker({coords:{lat: 44.8837, lng: -86.0442}})

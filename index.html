@@ -9,12 +9,12 @@
 <style>
 #map {
   background: green;
-  height: 400px;
+  height: 600px;
   width: 100%;
   </style>
 </head>
 <body>
-<h1>My Google Map</h1>
+<h1>Great Lakes Destinations</h1>
   <div id="map"></div>
 
 <script>
@@ -23,23 +23,86 @@
     // Map options
   var options = {
     zoom: 6,
-    center: {lat: 43.4501, lng: -87.2220}
+    center: {lat: 44.8501, lng: -87.2220}
   }
   // New map
   var map = new google.maps.Map(document.getElementById('map'), options)
 
   // sleeping bear dunes
 
-function addMarker(coords){
+function addMarker(props){
   new google.maps.Marker({
-    position:coords,
+    position:props.coords,
     map: map,
     icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
   });
 }
 
-addMarker({lat: 44.8837, lng: -86.0442})
-addMarker({lat: 44.7631, lng: -85.6206})
+// Sleeping Bear Dunes
+addMarker({coords:{lat: 44.8837, lng: -86.0442}})
+// Traverse City
+addMarker({coords:{lat: 44.7631, lng: -85.6206}})
+// Holland, 42.835584200795516, -86.11250208226757
+addMarker({coords:{lat: 42.835584200795516, lng: -86.11250208226757}})
+//south haven, 42.40316752119046, -86.27297163030516
+addMarker({coords:{lat: 42.40316752119046, lng: -86.27297163030516}})
+//grand haven, 43.06332139458724, -86.22716015025239
+addMarker({coords:{lat: 43.06332139458724, lng: -86.22716015025239}})
+//New buffalo, 41.808099183933116, -86.74502371207247
+addMarker({coords:{lat: 41.808099183933116, lng: -86.74502371207247}})
+//st. joes, 42.09666067392483, -86.4859678905205
+addMarker({coords:{lat: 42.09666067392483, lng: -86.4859678905205}})
+//ludington, 43.95534169559414, -86.44889229216255
+addMarker({coords:{lat: 43.95534169559414, lng: -86.44889229216255}})
+//muskegon,  43.31463157813105, -86.25103688354207
+addMarker({coords:{lat: 43.31463157813105, lng: -86.25103688354207}})
+// indian dunes national Park 41.65026686232037, -87.0993327649549
+addMarker({coords:{lat: 41.65026686232037, lng: -87.0993327649549}})
+// Grand rapids Children's museum
+addMarker({coords:{lat: 42.963600, lng: -85.667191}})
+// Meijer Garden  42.9795, 85.5901
+addMarker({coords:{lat: 42.9795, lng: -85.5901}})
+// Fayette 45.71891513583621, -86.66774222329686
+addMarker({coords:{lat: 45.71891513583621, lng: -86.66774222329686}})
+//Kitch-iti-kipp
+addMarker({coords:{lat: 46.0042, lng: -86.3820}})
+//Marquette
+addMarker({coords:{lat: 46.5436, lng: -87.3954}})
+// Presque isle
+addMarker({coords:{lat: 46.5880, lng: -87.3818}})
+// sugarloaf
+addMarker({coords:{lat: 46.5891, lng: -87.4451}})
+// Pictured Rocks 46.5707, 86.3251
+addMarker({coords:{lat: 46.5707, lng: -86.3251}})
+// Devil's log slide 46.65435105883329, -86.11127976136282
+addMarker({coords:{lat: 46.65435105883329, lng: -86.11127976136282}})
+// Fort Michilimackinac 45.7878, 84.7319
+addMarker({coords:{lat: 45.7878, lng: -84.7319}})
+// Clyde's 45.85786249557904, -84.73464578465929
+addMarker({coords:{lat: 45.85786249557904, lng: -84.73464578465929}})
+// taquamenon falls  46.576606301536934, -85.25741751277552
+addMarker({coords:{lat: 46.576606301536934, lng: -85.25741751277552}})
+//oswald's bear ranch 46.43053177280181, -85.59186423184686
+addMarker({coords:{lat: 46.43053177280181, lng: -85.59186423184686}})
+//Sault Locks 46.502218073091974, -84.35030005443528
+addMarker({coords:{lat: 46.502218073091974, lng: -84.35030005443528}})
+// Rapid River Park 46.061817022456616, -86.989632040202
+addMarker({coords:{lat: 46.061817022456616, lng: -86.989632040202}})
+// Gladstone Mich 45.873635652560225, -87.02807102230716
+addMarker({coords:{lat: 45.873635652560225, lng: -87.02807102230716}})
+// Island Resort and Casino -- Splash Island --45.70292652676633, -87.33967928465928
+addMarker({coords:{lat: 45.70292652676633, lng: -87.33967928465928}})
+// the DeYoung Family Zoo zoo 45.307745636406956, -87.64342793189883
+addMarker({coords:{lat: 45.307745636406956, lng: -87.64342793189883}})
+// Colonol K pasties 45.110462688311834, -87.6147744020783
+addMarker({coords:{lat: 45.110462688311834, lng: -87.6147744020783}})
+// bay beach   44.53145561298, -87.979914801525
+addMarker({coords:{lat: 44.53145561298, lng: -87.979914801525}})
+// Port Washington Possibility playgroun 43.39684866905222, -87.86544622558881
+addMarker({coords:{lat: 43.39684866905222, lng: -87.86544622558881}})
+// Port washington ice cream  43.39123283029162, -87.86973777299856
+addMarker({coords:{lat:  43.39123283029162, lng: -87.86973777299856}})
+
 
   /*
   var sleepingBearDunes = new google.maps.Marker({

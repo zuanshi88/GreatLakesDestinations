@@ -72,6 +72,16 @@ function addMarker(props){
     }
     });
 
+    marker.addListener('touchstart', function(){
+      if(marker.clicked == false){
+      marker.infoWindow.open(map, marker)
+      marker.clicked = true;
+    } else {
+      marker.infoWindow.close();
+        marker.clicked = false;
+    }
+    });
+
   }
 
 

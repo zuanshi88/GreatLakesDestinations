@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Google Map</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
 <style>
 #map {
   background: green;
@@ -60,7 +60,7 @@ function addMarker(props){
   var marker = new google.maps.Marker({
     position:props.coords,
     map: map,
-    clicked: false
+    clicked: false,
     // iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
   });
 
@@ -116,145 +116,236 @@ function addMarker(props){
 
 }
 
-const restaurantIcon = "https://developers.google.com/maps/documentation/javascript/examples/full/images/restaurant_maps.png"
 
 // Sleeping Bear Dunes
 addMarker({
             coords:{lat: 44.8837, lng: -86.0442},
             content: "<div class='info-box'><h1><a href='https://www.nps.gov/slbe/index.htm'>SLEEPING BEAR DUNES</a></h1><p>this whole area has so much wonderful lake front and dune hiking.</p></div>",
-            iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_maps.png",
+            iconImage: "/images/desert-3.png"
           })
 // Traverse City
-addMarker({coords:{lat: 44.7631, lng: -85.6206}, content: "<h1><a href='https://www.traversecity.com/?gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2HF6zpCr2r37qvLv-Ph9OCQKh6Oi_qhWMTIXKVlNUzR9QSA3vJ9aJoaAtAeEALw_wcB'>TRAVERSE CITY</a></h1><p>vibrant summer destination</p>"})
+addMarker({
+            coords:{lat: 44.7631, lng: -85.6206},
+            content: "<h1><a href='https://www.traversecity.com/?gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2HF6zpCr2r37qvLv-Ph9OCQKh6Oi_qhWMTIXKVlNUzR9QSA3vJ9aJoaAtAeEALw_wcB'>TRAVERSE CITY</a></h1><p>vibrant summer destination</p>",
+            iconImage: "/images/smallcity.png"
+          })
 // Holland, 42.835584200795516, -86.11250208226757
-addMarker({coords:{lat: 42.835584200795516, lng: -86.11250208226757}, content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>HOLLAND</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>"})
+addMarker({
+            coords:{lat: 42.835584200795516, lng: -86.11250208226757},
+            content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>HOLLAND</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
+            iconImage: "/images/beach-export.png"
+          })
 //south haven, 42.40316752119046, -86.27297163030516
-addMarker({coords:{lat: 42.40316752119046, lng: -86.27297163030516}, content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>SOUTH HAVEN</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>"})
+addMarker({
+            coords:{lat: 42.40316752119046, lng: -86.27297163030516},
+            content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>SOUTH HAVEN</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
+            iconImage: "/images/beach-export.png"
+          })
 //grand haven, 43.06332139458724, -86.22716015025239
-addMarker({coords:{lat: 43.06332139458724, lng: -86.22716015025239}, content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>GRAND HAVEN</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>"})
+addMarker({
+            coords:{lat: 43.06332139458724, lng: -86.22716015025239},
+            content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>GRAND HAVEN</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
+            iconImage: "/images/beach-export.png"
+          })
 //New buffalo, 41.808099183933116, -86.74502371207247
 addMarker({
             coords:{lat: 41.808099183933116, lng: -86.74502371207247},
             content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>NEW BUFFALO</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
-            iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_maps.png",
+            iconImage: "/images/beach-export.png"
           })
 //st. joes, 42.09666067392483, -86.4859678905205
-addMarker({coords:{lat: 42.09666067392483, lng: -86.4859678905205}, content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>ST. JOESPH</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>"})
+addMarker({
+            coords:{lat: 42.09666067392483, lng: -86.4859678905205},
+            content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>ST. JOESPH</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
+            iconImage: "/images/beach-export.png"
+          })
 //ludington, 43.95534169559414, -86.44889229216255
-addMarker({coords:{lat: 43.95534169559414, lng: -86.44889229216255}, content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>LUDINGTON</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>"})
+addMarker({
+            coords:{lat: 43.95534169559414, lng: -86.44889229216255},
+            content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>LUDINGTON</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
+            iconImage: "/images/beach-export.png"
+          })
 //muskegon,  43.31463157813105, -86.25103688354207
-addMarker({coords:{lat: 43.31463157813105, lng: -86.25103688354207}, content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>MUSKEGON</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>"})
+addMarker({
+            coords:{lat: 43.31463157813105, lng: -86.25103688354207},
+            content: "<h1><a href='https://www.midwestliving.com/travel/michigan/8-great-lake-michigan-beach-towns/'>MUSKEGON</a></h1><p>super quaint – good beaches, lots of hiking, bike trails etc.</p>",
+            iconImage: "/images/beach-export.png"
+          })
 // indian dunes national Park 41.65026686232037, -87.0993327649549
-addMarker({coords:{lat: 41.65026686232037, lng: -87.0993327649549}, content: "<h1><a href='https://www.nps.gov/indu/index.htm'>INDIANA DUNES</a></h1><p>epic, for the midwest, dune hikes await</p>"})
+addMarker({
+            coords:{lat: 41.65026686232037, lng: -87.0993327649549},
+            content: "<h1><a href='https://www.nps.gov/indu/index.htm'>INDIANA DUNES</a></h1><p>epic, for the midwest, dune hikes await</p>",
+            iconImage: "/images/desert-3.png"
+          })
 // Grand Rapids 42.967054840116504, -85.66787764545133
 addMarker({
-  coords:{lat: 42.967054840116504, lng: -85.66787764545133},
-  content: "<h1><a href='https://www.experiencegr.com/?svap=114074&gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2E0OQF_BkEHuxZCB8H4l3WrHcSXJG2v_e7Sg1_Z-w9IrPLgjqf0tuIaAu2MEALw_wcB'>Grand Rapids</a></h1><p>pretty cool town with all the mid-market amenities</p>"
+            coords:{lat: 42.967054840116504, lng: -85.66787764545133},
+            content: "<h1><a href='https://www.experiencegr.com/?svap=114074&gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2E0OQF_BkEHuxZCB8H4l3WrHcSXJG2v_e7Sg1_Z-w9IrPLgjqf0tuIaAu2MEALw_wcB'>Grand Rapids</a></h1><p>pretty cool town with all the mid-market amenities</p>",
+            iconImage: "/images/bigcity.png"
           })
 
 // Grand rapids Children's museum
-addMarker({coords:{lat: 42.963600, lng: -85.667191}, content: "<h1><a href='https://www.grcm.org/'>GR CHILDREN'S MUSEUM</a></h1><p>Surprisingly fantastic children's museum</p>"})
+addMarker({
+            coords:{lat: 42.963600, lng: -85.667191},
+            content: "<h1><a href='https://www.grcm.org/'>GR CHILDREN'S MUSEUM</a></h1><p>Surprisingly fantastic children's museum</p>",
+            iconImage: "/images/mural.png"
+          })
 // Meijer Garden  42.9795, 85.5901
-addMarker({coords:{lat: 42.9795, lng: -85.5901}, content: "<h1><a href='https://www.meijergardens.org/'>MEIJER GARDENS</a></h1><p>kid friendly bontanic gardens and sculpture park</p>"})
+addMarker({
+            coords:{lat: 42.9795, lng: -85.5901},
+            content: "<h1><a href='https://www.meijergardens.org/'>MEIJER GARDENS</a></h1><p>kid friendly bontanic gardens and sculpture park</p>",
+            iconImage: "/images/garden.png"
+          })
 // Fayette 45.71891513583621, -86.66774222329686
-addMarker({coords:{lat: 45.71891513583621, lng: -86.66774222329686}, content: "<h1><a href='https://en.wikipedia.org/wiki/Fayette_Historic_State_Park'>FAYETTE STATE PARK</a></h1><p>a ghost town preserved as a State Park. It was an industrial community that made pig iron in the late 1800s. It has a lot of preserved buildings that you can walk around in as well as some interesting industrial architectural relics. Sometimes they have historical reenactments and such.</p>"})
+addMarker({
+            coords:{lat: 45.71891513583621, lng: -86.66774222329686},
+            content: "<h1><a href='https://en.wikipedia.org/wiki/Fayette_Historic_State_Park'>FAYETTE STATE PARK</a></h1><p>a ghost town preserved as a State Park. It was an industrial community that made pig iron in the late 1800s. It has a lot of preserved buildings that you can walk around in as well as some interesting industrial architectural relics. Sometimes they have historical reenactments and such.</p>",
+            iconImage: "/images/ruins-2.png"
+          })
 //Kitch-iti-kipp
-addMarker({coords:{lat: 46.0042, lng: -86.3820}, content: "<h1><a href='https://www.uptravel.com/things-to-do/attractions/kitch-iti-kipi/'>KITCH-ITI-KIPI</a></h1><p>natural spring right off of US 2 that has a platform/raft with an open bottom so you can float out on the spring lake/pond and see fish and whatnot in the very clear emerald-hued waters</p>"})
+addMarker({
+            coords:{lat: 46.0042, lng: -86.3820},
+            content: "<h1><a href='https://www.uptravel.com/things-to-do/attractions/kitch-iti-kipi/'>KITCH-ITI-KIPI</a></h1><p>natural spring right off of US 2 that has a platform/raft with an open bottom so you can float out on the spring lake/pond and see fish and whatnot in the very clear emerald-hued waters</p>",
+            iconImage: "/images/lake.png"
+          })
 //Marquette
 addMarker({
-    coords:{lat: 46.5436, lng: -87.3954},
-    content: "<h1>MARQUETTE</h1><p>tons of hiking around here (<a href='https://noquetrails.org/'>Noquemanon Trail Network</a>). Definitely the best town in the UP in my humble opinion. We always enjoy <a href='https://www.michigan.org/article/trip-idea/sugarloaf-mountain-short-hike-amazing-view'>SUGAR LOAF</a> as well as <a href='https://www.travelmarquette.com/things-to-do/attractions/presque-isle-park/'>PRESQUE ISLE</a>.  Downtown Marquette is apparently in the top 30 quaintest downtowns in America… top 30, not too shabby.</p>",
-    iconImage: "http://maps.google.com/mapfiles/kml/shapes/water.png",
+            coords:{lat: 46.5436, lng: -87.3954},
+            content: "<h1>MARQUETTE</h1><p>tons of hiking around here (<a href='https://noquetrails.org/'>Noquemanon Trail Network</a>). Definitely the best town in the UP in my humble opinion. We always enjoy <a href='https://www.michigan.org/article/trip-idea/sugarloaf-mountain-short-hike-amazing-view'>SUGAR LOAF</a> as well as <a href='https://www.travelmarquette.com/things-to-do/attractions/presque-isle-park/'>PRESQUE ISLE</a>.  Downtown Marquette is apparently in the top 30 quaintest downtowns in America… top 30, not too shabby.</p>",
+            iconImage: "/images/smallcity.png"
   })
 // Presque isle
 addMarker({
             coords:{lat: 46.5880, lng: -87.3818},
             content: "<h1><a href='https://www.travelmarquette.com/things-to-do/attractions/presque-isle-park/'>PRESQUE ISLE PARK</a></h1><p>black rocks on Lake Superior, hilly forest hikes, and an ice cream stand</p>",
-            iconImage: "http://maps.google.com/mapfiles/kml/shapes/hiker.png"
+            iconImage: "/images/hiking2.png"
             })
 // sugarloaf
 addMarker({
             coords:{lat: 46.5891, lng: -87.4451},
             content: "<h1><a href='https://www.michigan.org/article/trip-idea/sugarloaf-mountain-short-hike-amazing-view'>SUGAR LOAF</a></h1><p>Lots of stairs, but a view worth every step</p>",
-            iconImage: "http://maps.google.com/mapfiles/kml/shapes/hiker.png"
+            iconImage: "/images/mountains.png"
           })
 // Pictured Rocks 46.5707, 86.3251
-addMarker({coords:{lat: 46.5707, lng: -86.3251}, content: "<h1><a href='https://www.nps.gov/piro/index.htm'>PICTURED ROCKS</a></h1><p>lots of hiking around here as well as some boat tours of the gorgeous and iconic Pictured Rocks. </p>"})
+addMarker({
+            coords:{lat: 46.5707, lng: -86.3251},
+            content: "<h1><a href='https://www.nps.gov/piro/index.htm'>PICTURED ROCKS</a></h1><p>lots of hiking around here as well as some boat tours of the gorgeous and iconic Pictured Rocks. </p>",
+            iconImage: "/images/hiking2.png"
+          })
 // Devil's log slide 46.65435105883329, -86.11127976136282
-addMarker({coords:{lat: 46.65435105883329, lng: -86.11127976136282}, content: "<h1><a href='https://tripbucket.com/dreams/dream/see-devils-log-slide-pictured-rocks-national-lakeshore-michi/'>DEVIL'S LOG SLIDE</a></h1><p>Climbing down and then up Devils Log Slide is a a great way to tire the kids out and catch some great views!</p>"})
+addMarker({
+            coords:{lat: 46.65435105883329, lng: -86.11127976136282},
+            content: "<h1><a href='https://tripbucket.com/dreams/dream/see-devils-log-slide-pictured-rocks-national-lakeshore-michi/'>DEVIL'S LOG SLIDE</a></h1><p>Climbing down and then up Devils Log Slide is a a great way to tire the kids out and catch some great views!</p>",
+            iconImage: "/images/desert-3.png"
+          })
 //Muskellonge state park 46.6768460315615, -85.6280844318353
-addMarker({coords:{lat: 46.6768460315615, lng: -85.6280844318353}, content: "<h1><a href='https://www2.dnr.state.mi.us/parksandtrails/Details.aspx?id=424&type=SPRK'>MUSKELLONGE LAKE STATE PARK</a></h1><p>A wonderful State Park for camping on an inland lake that's very close to the Superior Shoreline</p>"})
+addMarker({
+            coords:{lat: 46.6768460315615, lng: -85.6280844318353},
+            content: "<h1><a href='https://www2.dnr.state.mi.us/parksandtrails/Details.aspx?id=424&type=SPRK'>MUSKELLONGE LAKE STATE PARK</a></h1><p>A wonderful State Park for camping on an inland lake that's very close to the Superior Shoreline</p>",
+            iconImage: "/images/lodging_hiking.png"
+          })
 // Fort Michilimackinac 45.7878, 84.7319
 addMarker({
             coords:{lat: 45.7878, lng: -84.7319},
             content: "<h1><a href='https://www.mackinacparks.com/parks-and-attractions/colonial-michilimackinac/?utm_source=google&utm_medium=cpc&utm_campaign=cnhi'>FORT MICHILIMACKINAC</a></h1><p>the Colonial fort in Mackinaw City is great, always enjoyed visiting there as a kid</p>",
-            iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/campground.png",
+            iconImage: "/images/museum_war.png",
           })
 // Mackinaw Island 45.869051948617084, -84.62741703408847
 addMarker({
             coords:{lat: 45.869051948617084, lng: -84.62741703408847},
             content: "<h1><a href='https://www.mackinacisland.org/'>Mackinac Island</a></h1><p>A ferry ride, a fort, no cars and delicious fudge-- what more do you need?</p>",
-            iconImage: "http://maps.google.com/mapfiles/kml/shapes/snack_bar.png"
+            iconImage: "/images/ferry.png"
           })
 // Clyde's 45.85786249557904, -84.73464578465929
-addMarker({coords:{lat: 45.85786249557904, lng: -84.73464578465929}, content: "<h1><a href='https://www.onlyinyourstate.com/michigan/old-fashioned-drive-in-mi/'>CLYDE'S</a></h1><p>Located in St. Ignace, the town on the North side of the Mackinaw Bridge featuring burgers and shakes and ‘quality since 1949’!</p>"})
+addMarker({
+            coords:{lat: 45.85786249557904, lng: -84.73464578465929},
+            content: "<h1><a href='https://www.onlyinyourstate.com/michigan/old-fashioned-drive-in-mi/'>CLYDE'S</a></h1><p>Located in St. Ignace, the town on the North side of the Mackinaw Bridge featuring burgers and shakes and ‘quality since 1949’!</p>",
+            iconImage: "/images/burger.png"
+            // "http://maps.google.com/mapfiles/kml/shapes/snack_bar.png"
+          })
+
+// Lehto's Pasties 45.899520100570626, -84.83275314996025
+addMarker({
+            coords:{lat: 45.899520100570626 , lng: -84.83275314996025},
+            content: "<h1><a href='https://www.lehtospasties.com/'>LEHTO'S PASTIES</a></h1><p>'Famous', delicious Pasties since 1947!</p>",
+            iconImage: "/images/bread.png"
+            // "http://maps.google.com/mapfiles/kml/shapes/snack_bar.png"
+          })
+
+
 // taquamenon falls  46.576606301536934, -85.25741751277552
-addMarker({coords:{lat: 46.576606301536934, lng: -85.25741751277552}, content: "<h1><a href='https://www.awesomemitten.com/tahquamenon-falls-state-park/'>TAQUAMENON FALLS</a></h1><p>definitely a natural highlight of the UP. It’s not Yellow Stone, but it’s very pretty and has lots of kid friendly hiking and water play (the Lower Falls are fun to climb around on and swim a bit)</p>"})
+addMarker({
+            coords:{lat: 46.576606301536934, lng: -85.25741751277552},
+            content: "<h1><a href='https://www.awesomemitten.com/tahquamenon-falls-state-park/'>TAQUAMENON FALLS</a></h1><p>definitely a natural highlight of the UP. It’s not Yellow Stone, but it’s very pretty and has lots of kid friendly hiking and water play (the Lower Falls are fun to climb around on and swim a bit)</p>",
+            iconImage: "/images/waterfall-2.png"
+          })
 //oswald's bear ranch 46.43053177280181, -85.59186423184686
-addMarker({coords:{lat: 46.43053177280181, lng: -85.59186423184686}, content: "<h1><a href='https://www.oswaldsbearranch.com/'>OSWALD'S BEAR RANCH</a></h1><p>if you guys want to see some Bears, this place has like 40 of them!</p>"})
+addMarker({
+            coords:{lat: 46.43053177280181, lng: -85.59186423184686},
+            content: "<h1><a href='https://www.oswaldsbearranch.com/'>OSWALD'S BEAR RANCH</a></h1><p>if you guys want to see some Bears, this place has like 40 of them!</p>",
+            iconImage: "/images/bear.png"
+          })
 //Sault Locks 46.502218073091974, -84.35030005443528
-addMarker({coords:{lat: 46.502218073091974, lng: -84.35030005443528}, content: "<h1><a href='https://saultstemarie.com/attractions/soo-locks/?utm_source=google&utm_medium=cpc&utm_campaign=26SaultSEM2022&utm_content=135029857352&utm_term=&gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2E0hYCybhRhGwBC8fGd4WuSQ-hwqkGChQUpYYtnI9-IRyY6YRrvd5oaAhejEALw_wcB'>SOO LOCKS</a></h1><p>right on the border with Canada and a great place to see huge ships super close as they pass through the locks(there’s even a spectator grand stand.)</p>"})
+addMarker({
+            coords:{lat: 46.502218073091974, lng: -84.35030005443528},
+            content: "<h1><a href='https://saultstemarie.com/attractions/soo-locks/?utm_source=google&utm_medium=cpc&utm_campaign=26SaultSEM2022&utm_content=135029857352&utm_term=&gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2E0hYCybhRhGwBC8fGd4WuSQ-hwqkGChQUpYYtnI9-IRyY6YRrvd5oaAhejEALw_wcB'>SOO LOCKS</a></h1><p>right on the border with Canada and a great place to see huge ships super close as they pass through the locks(there’s even a spectator grand stand.)</p>",
+            iconImage: "/images/boat.png"
+          })
 // Rapid River Park 46.061817022456616, -86.989632040202
-addMarker({coords:{lat: 46.061817022456616, lng: -86.989632040202}, content: "<h1><a href='https://www.visitescanaba.com/things-to-see-and-do/member/rapid-river-falls-park'>RAPID RIVER FALLS PARK</a></h1><p>A humble county park, with a sweet shallow river, with a small waterfall, great for splashing around and trying to catch crayfish</p>"})
+addMarker({
+            coords:{lat: 46.061817022456616, lng: -86.989632040202},
+            content: "<h1><a href='https://www.visitescanaba.com/things-to-see-and-do/member/rapid-river-falls-park'>RAPID RIVER FALLS PARK</a></h1><p>A humble county park, with a sweet shallow river, with a small waterfall, great for splashing around and trying to catch crayfish</p>",
+            iconImage: "/images/river-2.png"
+          })
 // Gladstone Mich 45.873635652560225, -87.02807102230716
-addMarker({coords:{lat: 45.873635652560225, lng: -87.02807102230716}, content: "<h1><a href='https://www.gladstonemi.org/'>GLADSTONE</a></h1><p>'The Year Round Playground -- actually not super noteable, but it is my hometown, so thought I should include it on the map.'</p>"})
+addMarker({
+            coords:{lat: 45.873635652560225, lng: -87.02807102230716},
+            content: "<h1><a href='https://www.gladstonemi.org/'>GLADSTONE</a></h1><p>'The Year Round Playground -- actually not super noteable, but it is my hometown, so thought I should include it on the map.'</p>",
+            iconImage: "/images/smallcity.png"
+          })
 // Island Resort and Casino -- Splash Island --45.70292652676633, -87.33967928465928
-addMarker({coords:{lat: 45.70292652676633, lng: -87.33967928465928}, content: "<h1><a href='https://www.islandresortandcasino.com/hotel/amenities/splash-island'>ISLAND RESORT and CASINO</a></h1><p>a hotel and casino with a small indoor water park</p>"})
+addMarker({
+            coords:{lat: 45.70292652676633, lng: -87.33967928465928},
+            content: "<h1><a href='https://www.islandresortandcasino.com/hotel/amenities/splash-island'>ISLAND RESORT and CASINO</a></h1><p>a hotel and casino with a small indoor water park</p>",
+            iconImage: "/images/waterpark.png"
+          })
 // the DeYoung Family Zoo zoo 45.307745636406956, -87.64342793189883
-addMarker({coords:{lat: 45.307745636406956, lng: -87.64342793189883}, content: "<h1><a href='https://thedeyoungfamilyzoo.com/'>DeYOUNG FAMILY ZOO</a></h1><p>Privately run zoo with over 400 animals (domestic and exotic)</p>"})
+addMarker({
+            coords:{lat: 45.307745636406956, lng: -87.64342793189883},
+            content: "<h1><a href='https://thedeyoungfamilyzoo.com/'>DeYOUNG FAMILY ZOO</a></h1><p>Privately run zoo with over 400 animals (domestic and exotic)</p>",
+            iconImage: "/images/monkey-export.png"
+          })
 // Colonol K pasties 45.110462688311834, -87.6147744020783
-addMarker({coords:{lat: 45.110462688311834, lng: -87.6147744020783}, content: "<h1><a href='https://www.tripadvisor.com/Restaurant_Review-g42460-d10172165-Reviews-Colonel_K_s_Pasty_Shop-Menominee_Upper_Peninsula_Michigan.html'>COLONEL K's Pasty Shop</a></h1><p>betsy and I have tried a number of differnt pasties-- these are our favorites</p>"})
+addMarker({
+            coords:{lat: 45.110462688311834, lng: -87.6147744020783},
+            content: "<h1><a href='https://www.tripadvisor.com/Restaurant_Review-g42460-d10172165-Reviews-Colonel_K_s_Pasty_Shop-Menominee_Upper_Peninsula_Michigan.html'>COLONEL K's Pasty Shop</a></h1><p>betsy and I have tried a number of differnt pasties-- these are our favorites</p>",
+            iconImage: "/images/bread.png"
+          })
 // bay beach   44.53145561298, -87.979914801525
-addMarker({coords:{lat: 44.53145561298, lng: -87.979914801525}, content: "<h1><a href='https://www.greenbay.com/listing/bay-beach-amusement-park/3408/'>BAY BEACH AMUSEMENT PARK</a></h1><p>Old school permenant amusement park and a wildlife</p>"})
+addMarker({
+            coords:{lat: 44.53145561298, lng: -87.979914801525},
+            content: "<h1><a href='https://www.greenbay.com/listing/bay-beach-amusement-park/3408/'>BAY BEACH AMUSEMENT PARK</a></h1><p>Old school permenant amusement park and a wildlife</p>",
+            iconImage: "/images/themepark.png"
+          })
 // Bay beach wildlife sanctuary 44.527309395194855, -87.97576131648233
-addMarker({coords:{lat: 44.527309395194855, lng: -87.97576131648233}, content: "<h1><a href='https://www.baybeachwildlife.com/1291/Bay-Beach-Wildlife-Sanctuary'>BAY BEACH WILDLIFE SANCTUARY</a></h1><p>Old school permenant amusement park and a wildlife</p>"})
+addMarker({
+            coords:{lat: 44.527309395194855, lng: -87.97576131648233},
+            content: "<h1><a href='https://www.baybeachwildlife.com/1291/Bay-Beach-Wildlife-Sanctuary'>BAY BEACH WILDLIFE SANCTUARY</a></h1><p>Old school permenant amusement park and a wildlife</p>",
+            iconImage: "/images/wildlife.png"
+          })
 // Port Washington Possibility playgroun 43.39684866905222, -87.86544622558881
-addMarker({coords:{lat: 43.39684866905222, lng: -87.86544622558881}, content: "<h1><a href='https://possibilityplayground.org/'>POSSIBILITY PLAYGROUND</a></h1><p>very quaint lake town just north of Milwaukee with a great playground in this park up on a bluff right near the lake shore.</p>"})
+addMarker({
+            coords:{lat: 43.39684866905222, lng: -87.86544622558881},
+            content: "<h1><a href='https://possibilityplayground.org/'>POSSIBILITY PLAYGROUND</a></h1><p>very quaint lake town just north of Milwaukee with a great playground in this park up on a bluff right near the lake shore.</p>",
+            iconImage: "/images/playground.png"
+          })
 // Port washington ice cream  43.39123283029162, -87.86973777299856
-addMarker({coords:{lat:  43.39123283029162, lng: -87.86973777299856}, content: "<h1><a href='https://meetmeatfrankies.com/'>FRANKIE'S ICE CREAM</a></h1><p>donuts and ice cream from an Airstream trailer</p>"})
+addMarker({
+            coords:{lat:  43.39123283029162, lng: -87.86973777299856},
+            content: "<h1><a href='https://meetmeatfrankies.com/'>FRANKIE'S ICE CREAM</a></h1><p>donuts and ice cream from an Airstream trailer</p>",
+            iconImage: "/images/muffin_bagle.png"
+          })
 
-
-  /*
-  var sleepingBearDunes = new google.maps.Marker({
-    position:{lat: 44.8837, lng: -86.0442},
-    map: map,
-    icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-  });
-
-  var sleepingBearinfoWindow = new google.maps.InfoWindow({
-    content:'<h1><a href="https://www.nps.gov/slbe/index.htm">Sleeping bear dunes: this whole area has so much wonderful lake front and dune hiking</a></h1>'
-  });
-
-  sleepingBearDunes.addListener('click', function(){
-    sleepingBearinfoWindow.open(map, sleepingBearDunes);
-  });
-
-
-  // traverse city
-  var traverseCity = new google.maps.Marker({
-    position:{lat: 44.7631, lng: -85.6206},
-    map: map,
-    icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-  });
-
-  var traverseCityinfoWindow = new google.maps.InfoWindow({
-    content:'<h1><a href="https://www.traversecity.com/?gclid=Cj0KCQjw8uOWBhDXARIsAOxKJ2HF6zpCr2r37qvLv-Ph9OCQKh6Oi_qhWMTIXKVlNUzR9QSA3vJ9aJoaAtAeEALw_wcB">a vibrant summer destination</h1></a>'
-  });
-
-  traverseCity.addListener('click', function(){
-    traverseCityinfoWindow.open(map, traverseCity);
-  });
-*/
 }
 </script>
     <script async
